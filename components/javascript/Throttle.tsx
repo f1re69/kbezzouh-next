@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 
 interface ThrottleProps {
-  func: (...args: unknown[]) => void;
+  func: (...args: any[]) => void;
   wait: number;
   leading?: boolean;
   trailing?: boolean;
@@ -13,46 +13,32 @@ const Throttle: React.FC<ThrottleProps> = ({
   leading = false,
   trailing = false,
 }) => {
-  const throttledFunction = function (this: HTMLElement, ...args: unknown[]) {
-    let timeout: NodeJS.Timeout | null = null;
-    let previous = 0;
+  let timeout: NodeJS.Timeout | null = null;
+  let previous: number = 0;
 
-    const invokeFunc = function () {
-      previous = new Date().getTime();
-      timeout = null;
-      func.apply(this, args);
-    };
-
-    const shouldInvoke = function (now: number) {
-      if (!previous && !leading) previous = now;
-      const remaining = wait - (now - previous);
-      return leading || (remaining <= 0 && remaining > -wait);
-    };
-
-    return function (this: HTMLElement) {
-      const now = new Date().getTime();
-      if (shouldInvoke(now)) {
-        if (timeout) {
-          clearTimeout(timeout);
-          timeout = null;
-        }
-        previous = now;
-        func.apply(this, args);
-      } else if (!timeout && trailing) {
-        timeout = setTimeout(invokeFunc.bind(this), wait);
+  const throttledFunction = function (this: any) {
+    let now: number = new Date().getTime();
+    if (!previous && !leading) previous = now;
+    let remaining = wait - (now - previous);
+    if (remaining <= 0) {
+      if (timeout !== null) {
+        clearTimeout(timeout);
+        timeout = null;
       }
-    };
+      previous = now;
+      func.apply(this);
+    } else if (!timeout && trailing) {
+      timeout = setTimeout(function (this: any) {
+        previous = new Date().getTime();
+        timeout = null;
+        func.apply(this);
+      }, remaining);
+    }
   };
 
   return <ThrottleWrapper throttledFunction={throttledFunction} />;
 };
 
-interface ThrottleWrapperPropos {
-  throttledFunction: () => void;
-}
-
-const ThrottleWrapper: React.FC<ThrottleWrapperPropos> = ({
-  throttledFunction,
-}) => <></>;
+const ThrottleWrapper = (props: any) => <></>;
 
 export default Throttle;

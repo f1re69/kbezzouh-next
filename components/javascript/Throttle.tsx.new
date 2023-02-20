@@ -1,0 +1,52 @@
+import React from "react";
+
+interface ThrottleProps {
+  func: (...args: unknown[]) => void;
+  wait: number;
+  leading?: boolean;
+  trailing?: boolean;
+}
+
+const Throttle: React.FC<ThrottleProps> = ({
+  func,
+  wait,
+  leading = false,
+  trailing = false,
+}) => {
+  const throttledFunction = function (this: unknown, ...args: unknown[]) {
+    let timeout: NodeJS.Timeout | null = null;
+    let previous = 0;
+
+    const invokeFunc = function (this: unknown) {
+      previous = new Date().getTime();
+      timeout = null;
+      func.apply(this, args);
+    };
+
+    const shouldInvoke = function (now: number) {
+      if (!previous && !leading) previous = now;
+      const remaining = wait - (now - previous);
+      return leading || (remaining <= 0 && remaining > -wait);
+    };
+
+    return function (this: unknown) {
+      const now = new Date().getTime();
+      if (shouldInvoke(now)) {
+        if (timeout) {
+          clearTimeout(timeout);
+          timeout = null;
+        }
+        previous = now;
+        func.apply(this, args);
+      } else if (!timeout && trailing) {
+        timeout = setTimeout(invokeFunc.bind(this), wait);
+      }
+    };
+  };
+
+  return <ThrottleWrapper throttledFunction={throttledFunction} />;
+};
+
+const ThrottleWrapper = (props: any) => <></>;
+
+export default Throttle;
