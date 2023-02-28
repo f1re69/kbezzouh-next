@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import RefsContext from "../context/RefsContext";
+import Image from "next/image";
 
 const CertificationSection: React.FC = () => {
   const { certificationsSectionRef } = useContext(RefsContext);
@@ -20,7 +21,12 @@ const CertificationSection: React.FC = () => {
               Titre bac+3 "R.P.I" (Responsable de Projets Informatique) réalisé
               au sein de l'école Isitech.
             </h3>
-            <img src="./img/logo/isitech.png" alt="Logo Isitech" />
+            <Image
+              src="/logos/degrees/isitech.png"
+              alt="Isitech"
+              width={144}
+              height={144}
+            />
           </a>
           <p>
             Formation sur trois ans réalisée au sein de l'école Isitech en
@@ -34,7 +40,12 @@ const CertificationSection: React.FC = () => {
             target="_blank"
           >
             <h3>Certification Udemy "Modern React with Redux[2020]"</h3>
-            <img src="./img/logo/udemy.png" alt="Logo Udemy" />
+            <Image
+              src="/logos/degrees/udemy.png"
+              alt="Udemy"
+              width={144}
+              height={144}
+            />
           </a>
           <p>
             Cours en ligne d'une durée de 50 heures sur React, Redux, Context,

@@ -17,12 +17,6 @@ const Header: React.FC = () => {
     const sticky = mainSection.current.clientHeight / 2;
 
     if (mainHeader.current) {
-      console.log(
-        "window.pageYOffset, sticky, mainHeader.current.clientHeight",
-        window.pageYOffset,
-        sticky,
-        mainHeader.current.clientHeight,
-      );
       if (
         window.pageYOffset > sticky + mainHeader.current.clientHeight &&
         !mainHeader.current.classList.contains("sticky")
@@ -61,7 +55,7 @@ const Header: React.FC = () => {
 
   const throttledHandleScroll = Throttle({
     func: onScroll,
-    wait: 200,
+    wait: 1,
     leading: true,
     trailing: false,
   });
@@ -81,7 +75,7 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header id="main-header" className="sticky" ref={mainHeader}>
+    <header id="main-header" className="" ref={mainHeader}>
       <div id="alpha" className="header header-alpha">
         <h1>Khelil Bezzouh</h1>
         <nav role="navigation">

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import RefsContext from "../context/RefsContext";
+import Image from "next/image";
 
 const ProjectsSection: React.FC = () => {
   const { ProjectSectionRef } = useContext(RefsContext);
@@ -14,9 +15,10 @@ const ProjectsSection: React.FC = () => {
       <div className="content">
         <div className="square streamy">
           <div className="container">
-            <img
-              className="streamy"
-              src="./img/projects/streamy.jpg"
+            <Image
+              src="/logos/projects/streamy.jpg"
+              width={300}
+              height={300}
               alt="Streamy"
             />
             <div className="overlay">
@@ -33,9 +35,10 @@ const ProjectsSection: React.FC = () => {
         </div>
         <div className="square streamy">
           <div className="container">
-            <img
-              className="natura"
-              src="./img/projects/natura.jpg"
+            <Image
+              src="/logos/projects/natura.jpg"
+              width={300}
+              height={300}
               alt="Natura"
             />
             <div className="overlay">
