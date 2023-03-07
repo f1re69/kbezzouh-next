@@ -3,12 +3,12 @@ import RefsContext from "../context/RefsContext";
 import Image from "next/image";
 
 const ProjectsSection: React.FC = () => {
-  const { ProjectSectionRef } = useContext(RefsContext);
+  const { projectSectionRef } = useContext(RefsContext);
 
   return (
-    <section id="projects" ref={ProjectSectionRef}>
+    <section id="projects" ref={projectSectionRef}>
       <div className="anchor">
-        <a className="anchor-projects">&nbsp;</a>
+        <a id="anchor-projects">&nbsp;</a>
         <h2 className="top-title">Mes projets</h2>
       </div>
 

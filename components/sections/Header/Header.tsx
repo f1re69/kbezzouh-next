@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef } from "react";
-import Throttle from "../javascript/Throttle";
-import RefsContext from "../../components/context/RefsContext";
+import Throttle from "../../javascript/Throttle";
+import RefsContext from "../../context/RefsContext";
+import HeaderPresentation from "./HeaderPresentation";
 
 const Header: React.FC = () => {
   const sections = Object.values(useContext(RefsContext));
@@ -15,7 +16,6 @@ const Header: React.FC = () => {
   const scrollHeader = (): void => {
     const mainSection = sections[0];
     const sticky = mainSection.current.clientHeight / 2;
-
     if (mainHeader.current) {
       if (
         window.pageYOffset > sticky + mainHeader.current.clientHeight &&
@@ -74,48 +74,7 @@ const Header: React.FC = () => {
     };
   }, []);
 
-  return (
-    <header id="main-header" className="" ref={mainHeader}>
-      <div id="alpha" className="header header-alpha">
-        <h1>Khelil Bezzouh</h1>
-        <nav role="navigation">
-          <ul>
-            <li className="links">
-              <a href="#anchor-about">A propos</a>
-            </li>
-            <li className="links">
-              <a href="#anchor-degree">Diplômes</a>
-            </li>
-            <li className="links">
-              <a href="#anchor-projects">Portfolio</a>
-            </li>
-            <li className="links">
-              <a href="#anchor-contact">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div className="header header-beta">
-        <h1>Khelil Bezzouh</h1>
-        <nav role="navigation">
-          <ul>
-            <li className="links">
-              <a href="#anchor-about">A propos</a>
-            </li>
-            <li className="links">
-              <a href="#anchor-degree">Diplômes</a>
-            </li>
-            <li className="links">
-              <a href="#anchor-projects">Portfolio</a>
-            </li>
-            <li className="links">
-              <a href="#anchor-contact">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-  );
+  return <HeaderPresentation headerRef={mainHeader} />;
 };
 
 export default Header;

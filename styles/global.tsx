@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 html {
@@ -57,11 +57,13 @@ html {
     list-style: none;
   }
   
-  section#main i.fas.fa-chevron-down.fa-lg {
+  section#main svg.fa-chevron-down {
     animation-duration: 2s;
     animation-name: zoom;
     animation-iteration-count: infinite;
     animation-direction: normal;
+    height: 19px;
+    margin-top: 50px;
   }
   
   @keyframes zoom {

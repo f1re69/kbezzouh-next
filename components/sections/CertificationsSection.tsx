@@ -8,7 +8,7 @@ const CertificationSection: React.FC = () => {
   return (
     <section id="degree" ref={certificationsSectionRef}>
       <div className="anchor">
-        <a className="anchor-degree">&nbsp;</a>
+        <a id="anchor-degree">&nbsp;</a>
         <h2 className="top-title">Mes diplômes et certifications</h2>
       </div>
       <div className="content">

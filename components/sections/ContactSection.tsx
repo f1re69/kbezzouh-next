@@ -9,7 +9,7 @@ interface FormValues {
 }
 
 const ContactSection: React.FC = () => {
-  const { ContactSectionRef } = useContext(RefsContext);
+  const { contactSectionRef } = useContext(RefsContext);
 
   const handleSubmit = (
     values: FormValues,
@@ -18,9 +18,9 @@ const ContactSection: React.FC = () => {
     // Envoyer les données au serveur via PHPMailer ou une autre méthode
   };
   return (
-    <section id="contact" ref={ContactSectionRef}>
+    <section id="contact" ref={contactSectionRef}>
       <div className="anchor">
-        <a className="anchor-contact"></a>
+        <a id="anchor-contact"></a>
         <h2 className="top-title">Vous avez un message à me transmettre ?</h2>
       </div>
 

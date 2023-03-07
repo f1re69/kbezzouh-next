@@ -1,22 +1,22 @@
 import Head from "next/head";
 import GlobalStyle from "../styles/global";
-import Header from "../components/sections/Header";
+import Header from "../components/sections/Header/Header";
 import MainSection from "../components/sections/MainSection";
-import AboutSection from "../components/sections/AboutSection";
 import CertificationsSection from "../components/sections/CertificationsSection";
 import ProjectsSection from "../components/sections/ProjectsSection";
 import ContactSection from "../components/sections/ContactSection";
 import Footer from "../components/sections/Footer";
 import RefsContext from "../components/context/RefsContext";
 import { useRef } from "react";
+import AboutSectionContainer from "./../components/sections/AboutSection/AboutSectionContainer";
 
 export default function Home() {
   const refsContext = {
-    MainSectionRef: useRef<HTMLElement>(null),
+    mainSectionRef: useRef<HTMLElement>(null),
     aboutSectionRef: useRef<HTMLElement>(null),
     certificationsSectionRef: useRef<HTMLElement>(null),
-    ProjectSectionRef: useRef<HTMLElement>(null),
-    ContactSectionRef: useRef<HTMLElement>(null),
+    projectSectionRef: useRef<HTMLElement>(null),
+    contactSectionRef: useRef<HTMLElement>(null),
   };
 
   return (
@@ -36,7 +36,7 @@ export default function Home() {
         <div id="content-page">
           <Header />
           <MainSection />
-          <AboutSection />
+          <AboutSectionContainer />
           <CertificationsSection />
           <ProjectsSection />
           <ContactSection />
