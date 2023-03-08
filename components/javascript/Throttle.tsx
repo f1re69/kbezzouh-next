@@ -1,5 +1,4 @@
 import React from "react";
-import Throttle from "./Throttle";
 
 interface ThrottleProps {
   func: () => void;
