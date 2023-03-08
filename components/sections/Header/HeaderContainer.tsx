@@ -8,12 +8,12 @@ const Header: React.FC = () => {
   const mainHeader = useRef<HTMLHeadElement | null>(null);
   const links = useRef<NodeListOf<HTMLLinkElement> | null>(null);
 
-  const onScroll = function (): void {
+  const onScroll = function () {
     scrollHeader();
     changeLinkState();
   };
 
-  const scrollHeader = (): void => {
+  const scrollHeader = () => {
     const mainSection = sections[0];
     const sticky = mainSection.current.clientHeight / 2;
     if (mainHeader.current) {
@@ -22,18 +22,16 @@ const Header: React.FC = () => {
         !mainHeader.current.classList.contains("sticky")
       ) {
         mainHeader.current.classList.add("sticky");
-        console.log("add sticky");
       } else if (
         window.pageYOffset <= 0 &&
         mainHeader.current.classList.contains("sticky")
       ) {
         mainHeader.current.classList.remove("sticky");
-        console.log("remove sticky");
       }
     }
   };
 
-  const changeLinkState = (): void => {
+  const changeLinkState = () => {
     const activeSection = sections.find((section) => {
       const { top, bottom } = section.current.getBoundingClientRect();
       return top <= 100 && bottom >= 100;
@@ -55,7 +53,7 @@ const Header: React.FC = () => {
 
   const throttledHandleScroll = Throttle({
     func: onScroll,
-    wait: 1,
+    wait: 0.1,
     leading: true,
     trailing: false,
   });

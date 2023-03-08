@@ -1,10 +1,10 @@
 import Head from "next/head";
 import GlobalStyle from "../styles/global";
-import Header from "../components/sections/Header/Header";
-import MainSection from "../components/sections/MainSection";
-import CertificationsSection from "../components/sections/CertificationsSection";
-import ProjectsSection from "../components/sections/ProjectsSection";
-import ContactSection from "../components/sections/ContactSection";
+import Header from "../components/sections/Header/HeaderContainer";
+import MainSection from "../components/sections/MainSection/MainSectionContainer";
+import CertificationsSection from "../components/sections/CertificationsSection/CertificationsSectionContainer";
+import ProjectsSection from "../components/sections/ProjectSection/ProjectsSectionContainer";
+import ContactSection from "../components/sections/ContactSection/ContactSectionContainer";
 import Footer from "../components/sections/Footer";
 import RefsContext from "../components/context/RefsContext";
 import { useRef } from "react";

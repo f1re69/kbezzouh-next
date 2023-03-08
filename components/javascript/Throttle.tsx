@@ -1,7 +1,8 @@
-import React, { useRef } from "react";
+import React from "react";
+import Throttle from "./Throttle";
 
 interface ThrottleProps {
-  func: (...args: any[]) => void;
+  func: () => void;
   wait: number;
   leading?: boolean;
   trailing?: boolean;
@@ -14,12 +15,12 @@ const Throttle: React.FC<ThrottleProps> = ({
   trailing = false,
 }) => {
   let timeout: NodeJS.Timeout | null = null;
-  let previous: number = 0;
+  let previous = 0;
 
-  const throttledFunction = function (this: any) {
-    let now: number = new Date().getTime();
+  const throttledFunction = function (this: typeof Throttle) {
+    const now: number = new Date().getTime();
     if (!previous && !leading) previous = now;
-    let remaining = wait - (now - previous);
+    const remaining = wait - (now - previous);
     if (remaining <= 0) {
       if (timeout !== null) {
         clearTimeout(timeout);
@@ -28,7 +29,7 @@ const Throttle: React.FC<ThrottleProps> = ({
       previous = now;
       func.apply(this);
     } else if (!timeout && trailing) {
-      timeout = setTimeout(function (this: any) {
+      timeout = setTimeout(function (this: typeof Throttle) {
         previous = new Date().getTime();
         timeout = null;
         func.apply(this);

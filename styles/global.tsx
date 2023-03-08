@@ -282,22 +282,22 @@ html {
     width: 70%;
     text-align: justify;
   }
-  section#degree {
+  section#certifications {
     background-color: ivory;
   }
-  section#degree h2, section#degree h3 {
+  section#certifications h2, section#certifications h3 {
     color: #222222;
   }
-  section#degree div.content {
+  section#certifications div.content {
     width: 66%;
   }
   @media (max-width: 715px) {
-    section#degree div.content {
+    section#certifications div.content {
       width: 80%;
     }
   }
   @media (max-width: 715px) {
-    section#degree div.card img {
+    section#certifications div.card img {
       margin-right: 1rem;
     }
   }
@@ -439,7 +439,6 @@ html {
   
   .profile-image {
     border-radius: 50%;
-    width: 20%;
   }
   
   div.content a.button, input[type=submit] {

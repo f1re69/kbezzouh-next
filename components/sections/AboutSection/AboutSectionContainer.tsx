@@ -3,6 +3,7 @@ import RefsContext from "../../context/RefsContext";
 import AboutSectionPresentation from "./AboutSectionPresentation";
 import { images } from "./images";
 import profilePic from "../../../public/profilepic.jpg";
+import { text } from "./text";
 
 const AboutSectionContainer: React.FC = () => {
   const { aboutSectionRef } = useContext(RefsContext);
@@ -10,7 +11,7 @@ const AboutSectionContainer: React.FC = () => {
   return (
     <AboutSectionPresentation
       profileImage={profilePic}
-      presentationText="Je suis développeur Web et je vis à Lyon. Mon métier est une source de plaisir, j'aime aussi faire du sport, de la méditation et je suis aussi passionné par les mangas et les jeux-vidéos."
+      presentationText={text.presentation}
       skills={images}
       aboutSectionRef={aboutSectionRef}
     />
