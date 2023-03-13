@@ -1,5 +1,6 @@
 import React from "react";
 import { Formik, Field, FormikHelpers } from "formik";
+import sendEmail from "../../javascript/sendEmail";
 
 interface FormValues {
   name: string;
@@ -8,11 +9,18 @@ interface FormValues {
 }
 
 const ContactSectionForm: React.FC = () => {
-  const handleSubmit = (
+  const handleSubmit = async (
     values: FormValues,
     formikHelpers: FormikHelpers<FormValues>,
   ) => {
-    // Envoyer les données au serveur via PHPMailer ou une autre méthode
+    try {
+      // await sendEmail(values);
+      console.log("values : ", values);
+      await sendEmail(values);
+      formikHelpers.resetForm();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

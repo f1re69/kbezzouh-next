@@ -7,13 +7,13 @@ interface ThrottleProps {
   trailing?: boolean;
 }
 
-const Throttle: React.FC<ThrottleProps> = ({
+  const Throttle: React.FC<ThrottleProps> = ({
   func,
   wait,
   leading = false,
   trailing = false,
 }) => {
-  let timeout: NodeJS.Timeout | null = null;
+  let timeout: NodeJS.Timeout | null;
   let previous = 0;
 
   const throttledFunction = function (this: typeof Throttle) {
