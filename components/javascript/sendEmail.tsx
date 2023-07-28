@@ -7,7 +7,13 @@ interface FormData {
 }
 
 async function sendEmail(formData: FormData): Promise<AxiosResponse> {
-  const url = "http://localhost:3456/send-email";
+  const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/send-email";
+  console.log("url:", url);
+
+  if (!url) {
+    throw new Error("BACKEND_URL is not defined");
+  }
+
   try {
     const response = await axios.post(url, formData);
     return response;
