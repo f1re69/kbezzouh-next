@@ -6,10 +6,6 @@ interface IRefs {
   certificationsSectionRef: React.RefObject<HTMLElement>;
   projectSectionRef: React.RefObject<HTMLElement>;
   contactSectionRef: React.RefObject<HTMLElement>;
-  response: string;
-  setResponse: (response: string) => void;
-  loading: boolean;
-  setLoading: (loading: boolean) => void;
 }
 
 export const GlobalContext = createContext<IRefs>({
@@ -18,10 +14,6 @@ export const GlobalContext = createContext<IRefs>({
   certificationsSectionRef: React.createRef<HTMLElement>(),
   projectSectionRef: React.createRef<HTMLElement>(),
   contactSectionRef: React.createRef<HTMLElement>(),
-  loading: false,
-  setLoading: () => {},
-  response: "",
-  setResponse: () => {},
 });
 
 export default GlobalContext;

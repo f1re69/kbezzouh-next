@@ -1,5 +1,5 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 import { CertificationSectionStyled } from "./CertificationSectionStyled";
 import Card from "../Card/Card";
 
@@ -29,7 +29,7 @@ const CertificationSectionPresentation: React.FC<
       </div>
       <div className="content">
         {certifications.map((certification, index) => (
-          <Card certification={certification} index={index} />
+          <Card certification={certification} key={index} />
         ))}
         <a
           className="button"

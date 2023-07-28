@@ -14,12 +14,11 @@ interface CardProps {
     };
     desc: string;
   };
-  index: number;
 }
 
-const Card: React.FC<CardProps> = ({ certification, index }) => {
+const Card: React.FC<CardProps> = ({ certification }) => {
   return (
-    <CardStyled key={index} className="card clearfix">
+    <CardStyled className="card clearfix">
       <a href={certification.url} target="_blank" rel="noreferrer">
         <h3>{certification.title}</h3>
         <Image
