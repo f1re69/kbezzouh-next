@@ -1,10 +1,10 @@
-import isitechLogo from "../../../public/logos/degrees/isitech.png";
-import udemyLogo from "../../../public/logos/degrees/udemy.png";
+import isitechLogo from "../../../../public/logos/degrees/isitech.png";
+import udemyLogo from "../../../../public/logos/degrees/udemy.png";
 
 export const certifications = [
   {
     url: "https://www.ecole-isitech.com/nos-formations/formations-informatique/rpi/",
-    title: "Mes diplômes et certifications",
+    title: `Diplôme bac+3 "Responsable de Projets Informatique".`,
     image: {
       file: isitechLogo,
       alt: "Isitech",

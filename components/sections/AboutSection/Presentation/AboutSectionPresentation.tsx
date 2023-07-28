@@ -1,5 +1,7 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import { AboutSectionStyled } from "./AboutSectionStyled";
+import SliderSkill from "../SliderSkills/SliderSkill";
 
 interface AboutSectionPresentationProps {
   profileImage: StaticImageData;
@@ -20,7 +22,7 @@ const AboutSectionPresentation: React.FC<AboutSectionPresentationProps> = ({
   const imagesTwite = [...skills, ...skills];
 
   return (
-    <section id="about" ref={aboutSectionRef}>
+    <AboutSectionStyled ref={aboutSectionRef}>
       <div className="anchor">
         <a id="anchor-about">&nbsp;</a>
         <h2 className="top-title">A propos de moi</h2>
@@ -36,19 +38,8 @@ const AboutSectionPresentation: React.FC<AboutSectionPresentationProps> = ({
         />
         <p>{presentationText}</p>
       </div>
-      <div className="container skills">
-        <h3>Mes compétences</h3>
-        <div className="main-slider">
-          <div className="customer-logos slider">
-            {imagesTwite.map((skill, index) => (
-              <div className="slide" key={index}>
-                <Image src={skill.src} alt={skill.alt} width={70} height={70} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+      <SliderSkill imagesTwite={imagesTwite} />
+    </AboutSectionStyled>
   );
 };
 

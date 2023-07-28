@@ -1,5 +1,7 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
+import { CertificationSectionStyled } from "./CertificationSectionStyled";
+import Card from "../Card/Card";
 
 interface CertificationSectionPresentationProps {
   certifications: {
@@ -20,25 +22,14 @@ const CertificationSectionPresentation: React.FC<
   CertificationSectionPresentationProps
 > = ({ certifications, certificationsSectionRef }) => {
   return (
-    <section id="certifications" ref={certificationsSectionRef}>
+    <CertificationSectionStyled ref={certificationsSectionRef}>
       <div className="anchor">
         <a id="anchor-degree">&nbsp;</a>
         <h2 className="top-title">Mes diplômes et certifications</h2>
       </div>
       <div className="content">
         {certifications.map((certification, index) => (
-          <div key={index} className="card clearfix">
-            <a href={certification.url} target="_blank" rel="noreferrer">
-              <h3>{certification.title}</h3>
-              <Image
-                src={certification.image.file}
-                alt={certification.image.alt}
-                width={certification.image.width}
-                height={certification.image.height}
-              />
-            </a>
-            <p>{certification.desc}</p>
-          </div>
+          <Card certification={certification} index={index} />
         ))}
         <a
           className="button"
@@ -49,7 +40,7 @@ const CertificationSectionPresentation: React.FC<
           Télécharger mon CV
         </a>
       </div>
-    </section>
+    </CertificationSectionStyled>
   );
 };
 

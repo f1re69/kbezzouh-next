@@ -7,7 +7,7 @@ interface FormData {
 }
 
 async function sendEmail(formData: FormData): Promise<AxiosResponse> {
-  const url = "https://api-sendmail-git-main-f1re69.vercel.app/send-email";
+  const url = "http://localhost:3456/send-email";
   try {
     const response = await axios.post(url, formData);
     return response;

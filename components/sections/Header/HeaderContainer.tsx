@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from "react";
 import Throttle from "../../javascript/Throttle";
-import RefsContext from "../../context/RefsContext";
+import RefsContext from "../../context/GlobalContext";
 import HeaderPresentation from "./HeaderPresentation";
 
 const Header: React.FC = () => {

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import RefsContext from "../../context/RefsContext";
-import AboutSectionPresentation from "./AboutSectionPresentation";
-import { images } from "./images";
-import profilePic from "../../../public/profilepic.jpg";
+import RefsContext from "../../../context/GlobalContext";
+import AboutSectionPresentation from "../Presentation/AboutSectionPresentation";
+import { images } from "../Presentation/images";
+import profilePic from "../../../../public/profilepic.jpg";
 import { text } from "./text";
 
 const AboutSectionContainer: React.FC = () => {

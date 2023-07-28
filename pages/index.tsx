@@ -2,16 +2,16 @@ import Head from "next/head";
 import GlobalStyle from "../styles/global";
 import Header from "../components/sections/Header/HeaderContainer";
 import MainSection from "../components/sections/MainSection/MainSectionContainer";
-import CertificationsSection from "../components/sections/CertificationsSection/CertificationsSectionContainer";
-import ProjectsSection from "../components/sections/ProjectSection/ProjectsSectionContainer";
+import CertificationsSection from "../components/sections/CertificationsSection/Container/CertificationsSectionContainer";
+import ProjectsSection from "../components/sections/ProjectSection/Container/ProjectsSectionContainer";
 import ContactSection from "../components/sections/ContactSection/ContactSectionContainer";
 import Footer from "../components/sections/Footer";
-import RefsContext from "../components/context/RefsContext";
+import GlobalContext from "../components/context/GlobalContext";
 import { useRef } from "react";
-import AboutSectionContainer from "./../components/sections/AboutSection/AboutSectionContainer";
+import AboutSectionContainer from "../components/sections/AboutSection/Container/AboutSectionContainer";
 
 export default function Home() {
-  const refsContext = {
+  const globalContext = {
     mainSectionRef: useRef<HTMLElement>(null),
     aboutSectionRef: useRef<HTMLElement>(null),
     certificationsSectionRef: useRef<HTMLElement>(null),
@@ -20,7 +20,7 @@ export default function Home() {
   };
 
   return (
-    <RefsContext.Provider value={{ ...refsContext }}>
+    <GlobalContext.Provider value={{ ...globalContext }}>
       <GlobalStyle />
       <Head>
         <title>Khelil Bezzouh Développeur Junior - Portfolio</title>
@@ -43,6 +43,6 @@ export default function Home() {
           <Footer />
         </div>
       </div>
-    </RefsContext.Provider>
+    </GlobalContext.Provider>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import RefsContext from "../../context/RefsContext";
-import ProjectsSectionPresentation from "./ProjectSectionPresentation";
-import { projects } from "./projects";
+import RefsContext from "../../../context/GlobalContext";
+import ProjectsSectionPresentation from "../Presentation/ProjectSectionPresentation";
+import { projects } from "../projects";
 
 const ProjectsSection: React.FC = () => {
   const { projectSectionRef } = useContext(RefsContext);

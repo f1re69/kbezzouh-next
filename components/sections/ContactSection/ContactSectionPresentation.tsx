@@ -1,5 +1,5 @@
 import React from "react";
-import ContactSectionForm from "./ContactSectionForm";
+import ContactSectionForm from "./ContactSectionForm/ContactSectionForm";
 
 interface ContactSectionProps {
   contactSectionRef: React.RefObject<HTMLElement>;

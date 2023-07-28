@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import RefsContext from "../../context/RefsContext";
-import CertificationSectionPresentation from "./CertificationSectionPresentation";
+import RefsContext from "../../../context/GlobalContext";
+import CertificationSectionPresentation from "../Presentation/CertificationSectionPresentation";
 import { certifications } from "./certification";
 
 const CertificationSection: React.FC = () => {

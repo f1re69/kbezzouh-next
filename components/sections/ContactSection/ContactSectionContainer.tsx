@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import RefsContext from "../../context/RefsContext";
+import RefsContext from "../../context/GlobalContext";
 import ContactSectionPresentation from "./ContactSectionPresentation";
 
 const ContactSection: React.FC = () => {
