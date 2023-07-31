@@ -23,7 +23,7 @@ export default function Home() {
     <GlobalContext.Provider value={{ ...globalContext }}>
       <GlobalStyle />
       <Head>
-        <title>Khelil Bezzouh Développeur Junior - Portfolio</title>
+        <title>Développeur Fullstack Freelance</title>
         <meta
           name="description"
           content="My name is Khelil Bezzouh, i'm french Fullstack web-developper React.js, JavaScript, TypeScript, ASP, ASP.NET, .NET, C#, PHP, Node.js."
