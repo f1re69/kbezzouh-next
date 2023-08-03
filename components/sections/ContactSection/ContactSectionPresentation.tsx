@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ContactSectionForm from "./ContactSectionForm/ContactSectionForm";
 
 interface ContactSectionProps {
@@ -8,6 +8,13 @@ interface ContactSectionProps {
 const ContactSectionPresentation: React.FC<ContactSectionProps> = ({
   contactSectionRef,
 }) => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  }, []);
   return (
     <section id="contact" ref={contactSectionRef}>
       <div className="anchor">

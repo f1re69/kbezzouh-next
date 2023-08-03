@@ -9,6 +9,7 @@ interface FormValues {
   name: string;
   email: string;
   message: string;
+  recaptchaResponse: string;
 }
 
 const ContactSectionForm: React.FC = () => {
@@ -21,6 +22,13 @@ const ContactSectionForm: React.FC = () => {
     formikHelpers: FormikHelpers<FormValues>,
   ) => {
     try {
+      const captchaValue = (
+        document.getElementById("g-recaptcha-response") as HTMLInputElement
+      )?.value;
+      if (!captchaValue) {
+        throw new Error("Captcha verification failed");
+      }
+      values.recaptchaResponse = captchaValue;
       setTimeout(() => {
         handleResponseDismiss();
       }, 6000);
@@ -45,7 +53,12 @@ const ContactSectionForm: React.FC = () => {
 
   return (
     <Formik
-      initialValues={{ name: "", email: "", message: "" }}
+      initialValues={{
+        name: "",
+        email: "",
+        message: "",
+        recaptchaResponse: "",
+      }}
       onSubmit={handleSubmit}
     >
       {(formikProps) => (
@@ -88,8 +101,15 @@ const ContactSectionForm: React.FC = () => {
               </>
             )
           )}
-
-          <input type="submit" value="Envoyer" />
+          <div
+            className="g-recaptcha"
+            data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+          ></div>
+          <input
+            type="submit"
+            value="Envoyer"
+            style={{ display: "inline", marginTop: "1rem" }}
+          />{" "}
         </form>
       )}
     </Formik>
