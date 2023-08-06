@@ -1,29 +1,32 @@
 import React from "react";
 import Image from "next/image";
 import { SliderSkillStyled } from "./SliderSkillStyled";
+import { MainSlider, CustomerLogos, Slide } from "./SliderSkillsElements";
 
-interface SliderSkillProps {
+interface SliderSkillPresentationProps {
   imagesTwite: {
     src: string;
     alt: string;
   }[];
 }
 
-const SliderSkill: React.FC<SliderSkillProps> = ({ imagesTwite }) => {
+const SliderSkillPresentation: React.FC<SliderSkillPresentationProps> = ({
+  imagesTwite,
+}) => {
   return (
     <SliderSkillStyled>
       <h3>Mes compétences</h3>
-      <div className="main-slider">
-        <div className="customer-logos slider">
+      <MainSlider>
+        <CustomerLogos>
           {imagesTwite.map((skill, index) => (
-            <div className="slide" key={index}>
+            <Slide key={index}>
               <Image src={skill.src} alt={skill.alt} width={70} height={70} />
-            </div>
+            </Slide>
           ))}
-        </div>
-      </div>
+        </CustomerLogos>
+      </MainSlider>
     </SliderSkillStyled>
   );
 };
 
-export default SliderSkill;
+export default SliderSkillPresentation;

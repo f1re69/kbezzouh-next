@@ -1,10 +1,13 @@
 import React from "react";
 import { StaticImageData } from "next/image";
+import { FixedSizeList as List } from "react-window";
 import { CertificationSectionStyled } from "./CertificationSectionStyled";
+import { ContentDiv } from "./CertificationSectionElements";
 import Card from "../Card/Card";
 
 interface CertificationSectionPresentationProps {
   certifications: {
+    id: string;
     url: string;
     title: string;
     image: {
@@ -27,9 +30,9 @@ const CertificationSectionPresentation: React.FC<
         <a id="anchor-degree">&nbsp;</a>
         <h2 className="top-title">Mes diplômes et certifications</h2>
       </div>
-      <div className="content">
-        {certifications.map((certification, index) => (
-          <Card certification={certification} key={index} />
+      <ContentDiv>
+        {certifications.map((certification) => (
+          <Card certification={certification} key={certification.id} />
         ))}
         <a
           className="button"
@@ -39,7 +42,7 @@ const CertificationSectionPresentation: React.FC<
         >
           Télécharger mon CV
         </a>
-      </div>
+      </ContentDiv>
     </CertificationSectionStyled>
   );
 };

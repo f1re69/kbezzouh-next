@@ -4,7 +4,7 @@ import Header from "../components/sections/Header/HeaderContainer";
 import MainSection from "../components/sections/MainSection/MainSectionContainer";
 import CertificationsSection from "../components/sections/CertificationsSection/Container/CertificationsSectionContainer";
 import ProjectsSection from "../components/sections/ProjectSection/Container/ProjectsSectionContainer";
-import ContactSection from "../components/sections/ContactSection/ContactSectionContainer";
+import ContactSection from "../components/sections/ContactSection/Container/ContactSectionContainer";
 import Footer from "../components/sections/Footer";
 import GlobalContext from "../components/context/GlobalContext";
 import { useRef } from "react";

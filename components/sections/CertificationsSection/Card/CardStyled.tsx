@@ -5,16 +5,19 @@ export const CardStyled = styled.div`
   margin-bottom: 2rem;
   padding: 2rem;
   border-radius: 1rem;
+
   h3 {
     margin: 0 0rem 4rem 2rem;
     color: #222222;
   }
+
   img {
     min-width: 7rem;
     width: 15%;
     height: 15%;
-    float: left;
+    float: left; // Utilisation de float pour positionner l'image
     margin-right: 5rem;
+
     @media (max-width: 715px) {
       margin-right: 1rem;
     }

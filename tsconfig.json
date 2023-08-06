@@ -23,7 +23,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/sections/ContactSection/ContactSectionForm/ContactSectionFormStyled.jsx"
+    "components/sections/ContactSection/Presentation/ContactSectionFormStyled.jsx",
+    "components/sections/ContactSection/ContactSectionForm/ContactSectionFormSyled.jsx"
   ],
   "exclude": ["node_modules"]
 }

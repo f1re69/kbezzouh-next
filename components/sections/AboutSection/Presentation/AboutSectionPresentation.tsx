@@ -1,7 +1,8 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { AboutSectionStyled } from "./AboutSectionStyled";
-import SliderSkill from "../SliderSkills/SliderSkill";
+import { ContentDiv, ProfileImage } from "./AboutSectionElements";
+import SliderSkill from "../SliderSkills/Container/SliderSkillContainer";
 
 interface AboutSectionPresentationProps {
   profileImage: StaticImageData;
@@ -27,17 +28,16 @@ const AboutSectionPresentation: React.FC<AboutSectionPresentationProps> = ({
         <a id="anchor-about">&nbsp;</a>
         <h2 className="top-title">A propos de moi</h2>
       </div>
-      <div className="content">
+      <ContentDiv>
         <h3>Qui suis-je ?</h3>
-        <Image
+        <ProfileImage
           src={profileImage}
           alt="Profile image"
-          className="profile-image"
           width={128}
           height={128}
         />
         <p>{presentationText}</p>
-      </div>
+      </ContentDiv>
       <SliderSkill imagesTwite={imagesTwite} />
     </AboutSectionStyled>
   );
