@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "components/sections/ContactSection/Presentation/ContactSectionFormStyled.jsx",
-    "components/sections/ContactSection/ContactSectionForm/ContactSectionFormSyled.jsx"
+    "components/sections/ContactSection/ContactSectionForm/ContactSectionFormStyled.jsx"
   ],
   "exclude": ["node_modules"]
 }
