@@ -39,10 +39,12 @@ const ContactSectionForm: React.FC = () => {
       setLoading(false);
       setErr(false);
       setResponse("Email sent successfully!");
+      grecaptcha.reset();
       formikHelpers.resetForm();
     } catch (error: unknown) {
       setLoading(false);
       setErr(true);
+      grecaptcha.reset();
       setResponse("Failed to send email : " + (error as Error).message);
     }
   };

@@ -23,6 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "types/**/*",
     "components/sections/ContactSection/Presentation/ContactSectionFormStyled.jsx",
     "components/sections/ContactSection/ContactSectionForm/ContactSectionFormStyled.jsx"
   ],

@@ -19,4 +19,7 @@ export const ContactSectionFormStyled = styled.div`
   .response-dismiss {
     opacity: 0;
   }
+  .g-recaptcha {
+    transition: opacity 0.5s ease-in-out;
+  }
 `;
