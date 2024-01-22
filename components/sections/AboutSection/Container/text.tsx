@@ -1,4 +1,4 @@
 export const text = {
   presentation:
-    "En tant que développeur React freelance fullstack, je suis spécialisé dans la création d'applications web dynamiques et interactives. Je peux prendre en charge la conception, le développement et le déploiement de projets complets, tout en m'assurant que le code est propre, maintenable et évolutif. Mes compétences en front-end et back-end me permettent de créer des applications performantes et optimisées pour les utilisateurs finaux.",
+    "En tant que développeur fullstack junior, je suis passionné par le développement de solutions web innovantes et robustes. Ma spécialisation en React et mon expérience en tant que développeur m'ont permis de développer une solide compréhension de la création d'applications web dynamiques et interactives. Je suis compétent dans la gestion de l'ensemble du cycle de développement, depuis la conception initiale jusqu'au déploiement, en mettant l'accent sur la propreté, la maintenabilité et l'évolutivité du code.",
 };
