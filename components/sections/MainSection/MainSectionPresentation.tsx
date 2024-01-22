@@ -13,7 +13,7 @@ const MainSectionPresentation: React.FC<MainSectionProps> = ({
     <section id="main" ref={mainSectionRef}>
       <div className="inner">
         <h1>Khelil Bezzouh</h1>
-        <h2>Développeur Fullstack Freelance</h2>
+        <h2>Développeur Fullstack Junior</h2>
         <a href="#anchor-about">
           <FontAwesomeIcon icon={faChevronDown} className="fa-sm" />
         </a>
