@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef } from "react";
-import Throttle from "../../javascript/Throttle";
-import RefsContext from "../../context/GlobalContext";
-import HeaderPresentation from "./HeaderPresentation";
+import Throttle from "../../../javascript/Throttle";
+import RefsContext from "../../../context/GlobalContext";
+import HeaderPresentation from "../Presentation/HeaderPresentation";
 
 const Header: React.FC = () => {
   const sections = Object.values(useContext(RefsContext));

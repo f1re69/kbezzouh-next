@@ -1,15 +1,16 @@
 import React from "react";
 
 interface HeaderPresentationProps {
-  headerRef: React.RefObject<HTMLHeadElement>;
+  variant: string;
 }
 
-const HeaderPresentation: React.FC<HeaderPresentationProps> = ({
-  headerRef,
+const SharedHeaderContent: React.FC<HeaderPresentationProps> = ({
+  variant,
 }) => {
+  const headerClass = `header header-${variant}`;
   return (
-    <header id="main-header" className="" ref={headerRef}>
-      <div id="alpha" className="header header-alpha">
+    <>
+      <div id={variant} className={headerClass}>
         <h1>Khelil Bezzouh</h1>
         <nav role="navigation">
           <ul>
@@ -28,7 +29,7 @@ const HeaderPresentation: React.FC<HeaderPresentationProps> = ({
           </ul>
         </nav>
       </div>
-      <div className="header header-beta">
+      <div id="beta" className="header header-beta">
         <h1>Khelil Bezzouh</h1>
         <nav role="navigation">
           <ul>
@@ -47,8 +48,8 @@ const HeaderPresentation: React.FC<HeaderPresentationProps> = ({
           </ul>
         </nav>
       </div>
-    </header>
+    </>
   );
 };
 
-export default HeaderPresentation;
+export default SharedHeaderContent;

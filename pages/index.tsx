@@ -1,6 +1,6 @@
 import Head from "next/head";
 import GlobalStyle from "../styles/global";
-import Header from "../components/sections/Header/HeaderContainer";
+import Header from "../components/sections/Header/Container/HeaderContainer";
 import MainSection from "../components/sections/MainSection/MainSectionContainer";
 import CertificationsSection from "../components/sections/CertificationsSection/Container/CertificationsSectionContainer";
 import ProjectsSection from "../components/sections/ProjectSection/Container/ProjectsSectionContainer";
